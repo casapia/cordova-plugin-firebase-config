@@ -1,7 +1,7 @@
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-xmlns:android="http://schemas.android.com/apk/res/android"
-           id="cordova-plugin-firebase-config"
-      version="7.0.3">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="cordova-plugin-firebase-config"
+    version="7.0.3-NTL1">
 
     <name>cordova-plugin-firebase-config</name>
     <description>Cordova plugin for Firebase Remote Config</description>
@@ -15,13 +15,16 @@ xmlns:android="http://schemas.android.com/apk/res/android"
     </js-module>
 
     <engines>
-        <engine name="cordova" version=">=10.0.0"/>
-        <engine name="cordova-android" version=">=11.0.0"/>
-        <engine name="cordova-ios" version=">=6.0.0"/>
+        <engine name="cordova" version=">=11.0.0" />
+        <engine name="cordova-android" version=">=11.0.0" />
+        <engine name="cordova-ios" version=">=6.2.0" />
     </engines>
 
+    <dependency id="cordova-outsystems-firebase-core"
+        url="https://github.com/OutSystems/cordova-outsystems-firebase-core.git#1.0.1" />
+
     <platform name="ios">
-        <preference name="IOS_FIREBASE_POD_VERSION" default="9.3.0" />
+        <preference name="IOS_FIREBASE_POD_VERSION" default="10.7.0" />
 
         <config-file target="config.xml" parent="/*">
             <feature name="FirebaseConfig">
@@ -34,7 +37,7 @@ xmlns:android="http://schemas.android.com/apk/res/android"
 
         <podspec>
             <config>
-                <source url="https://cdn.cocoapods.org/"/>
+                <source url="https://cdn.cocoapods.org/" />
             </config>
             <pods use-frameworks="true">
                 <pod name="Firebase/RemoteConfig" spec="$IOS_FIREBASE_POD_VERSION" />
@@ -43,11 +46,12 @@ xmlns:android="http://schemas.android.com/apk/res/android"
     </platform>
 
     <platform name="android">
-        <preference name="ANDROID_FIREBASE_BOM_VERSION" default="30.3.1" />
+        <preference name="ANDROID_FIREBASE_BOM_VERSION" default="31.2.3" />
 
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="FirebaseConfig">
-                <param name="android-package" value="by.chemerisuk.cordova.firebase.FirebaseConfigPlugin" />
+                <param name="android-package"
+                    value="by.chemerisuk.cordova.firebase.FirebaseConfigPlugin" />
             </feature>
         </config-file>
 
