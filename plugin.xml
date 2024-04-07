@@ -1,7 +1,7 @@
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-xmlns:android="http://schemas.android.com/apk/res/android"
-           id="cordova-plugin-firebase-config"
-      version="8.0.0">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="cordova-plugin-firebase-config"
+    version="8.0.0">
 
     <name>cordova-plugin-firebase-config</name>
     <description>Cordova plugin for Firebase Remote Config</description>
@@ -46,13 +46,19 @@ xmlns:android="http://schemas.android.com/apk/res/android"
     </platform>
 
     <platform name="android">
-        <preference name="ANDROID_FIREBASE_BOM_VERSION" default="32.7.1" />
+        <preference name="ANDROID_FIREBASE_BOM_VERSION" default="32.8.0" />
 
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="FirebaseConfig">
                 <param name="android-package"
                     value="by.chemerisuk.cordova.firebase.FirebaseConfigPlugin" />
             </feature>
+        </config-file>
+
+        <config-file target="config.xml" parent="/*">
+            <preference name="AndroidXEnabled" value="true" />
+            <preference name="GradlePluginGoogleServicesEnabled" value="true" />
+            <preference name="GradlePluginGoogleServicesVersion" value="4.3.15" />
         </config-file>
 
         <dependency id="cordova-support-android-plugin" version="~2.0.4" />
