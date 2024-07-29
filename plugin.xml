@@ -57,16 +57,17 @@
             </feature>
         </config-file>
 
-        <config-file target="config.xml" parent="/*">
+        <!-- <config-file target="config.xml" parent="/*">
             <preference name="AndroidXEnabled" value="true" />
             <preference name="GradlePluginGoogleServicesEnabled" value="true" />
             <preference name="GradlePluginGoogleServicesVersion" value="4.3.8" />
-        </config-file>
+        </config-file> -->
 
         <dependency id="cordova-support-android-plugin" version="~2.0.4" />
 
         <framework src="platform('com.google.firebase:firebase-bom:$ANDROID_FIREBASE_BOM_VERSION')" />
         <framework src="com.google.firebase:firebase-config" />
+        <framework src="build.gradle" custom="true" type="gradleReference" />
 
         <source-file src="src/android/FirebaseConfigPlugin.java"
             target-dir="src/by/chemerisuk/cordova/firebase/" />
